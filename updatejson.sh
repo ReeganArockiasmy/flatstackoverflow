@@ -38,6 +38,7 @@ get_user_input() {
 	    #value=$value$key$'\n'
 	    #value=`printf '%q\n' "$value"`
 	    #echo $value
+	    key=`printf '%q\n' "$key"`
 	    value=" -s "\"$key\"" -i 0"$value
 	fi
     done
@@ -61,7 +62,7 @@ do
     jshon_value=$jshon_value$value
 done
 
-eval $jshon_value" <<<\"{}\"" >> /dev/null # It is any error came terminal the code
+eval $jshon_value" <<<\"{}\"" >> /dev/null # It is any error came terminal the code 
 
 sed -i '$d' $savefilename
 echo ,\"$id\": >> $savefilename

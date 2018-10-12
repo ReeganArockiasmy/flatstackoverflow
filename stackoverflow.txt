@@ -17,4 +17,55 @@
  ]
 }
 
+,"2":
+{
+ "id": "2",
+ "question": [
+  "Optional argument in shell"
+ ],
+ "answer": [
+  "somecommand foo"
+ ],
+ "ref": [
+  "https:\/\/stackoverflow.com\/questions\/9332802\/how-to-write-a-bash-script-that-takes-optional-input-arguments"
+ ],
+ "tags": [
+  "shell"
+ ]
+}
+
+,"3":
+{
+ "id": "3",
+ "question": [
+  "Optional\\ Argument\\ in\\ shell"
+ ],
+ "answer": [
+  "somecommand\\ $\\{1:-foo\\}"
+ ],
+ "ref": [
+  "https:\/\/stackoverflow.com\/questions\/9332802\/how-to-write-a-bash-script-that-takes-optional-input-arguments"
+ ],
+ "tags": [
+  "shell"
+ ]
+}
+
+,"4":
+{
+ "id": "4",
+ "question": [
+  "Optional\\ arument\\ in\\ shell"
+ ],
+ "answer": [
+  "somecommand\\ $\\{1:-foo\\}"
+ ],
+ "ref": [
+  "https:\/\/stackoverflow.com\/questions\/9332802\/how-to-write-a-bash-script-that-takes-optional-input-arguments"
+ ],
+ "tags": [
+  "shell"
+ ]
+}
+
 }
