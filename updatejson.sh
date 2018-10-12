@@ -35,9 +35,9 @@ get_user_input() {
 	    fi
 	    
 	else
-	    #value=$value$key$'\n'
+	    #ovalue=$value$key$'\n'
 	    #value=$(echo $value | sed -e 's/\"/\\"/g')
-	    echo $value
+	    #echo $value
 	    value=" -s "\"$key\"" -i 0"$value
 	fi
     done
@@ -61,8 +61,9 @@ do
     jshon_value=$jshon_value$value
 done
 
+eval $jshon_value" <<<\"{}\"" >> /dev/null # It is any error came terminal the code
 
 sed -i '$d' $savefilename
 echo ,\"$id\": >> $savefilename
-eval $jshon_value" <<<\"{}\"" >> $savefilename
+eval $jshon_value" <<<\"{}\"" >> $savefilename 
 echo -e "\n}" >> $savefilename
