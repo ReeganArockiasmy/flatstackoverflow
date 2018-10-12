@@ -35,13 +35,13 @@ get_user_input() {
 	    fi
 	    
 	else
-	    #ovalue=$value$key$'\n'
-	    #value=$(echo $value | sed -e 's/\"/\\"/g')
+	    #value=$value$key$'\n'
+	    #value=`printf '%q\n' "$value"`
 	    #echo $value
 	    value=" -s "\"$key\"" -i 0"$value
 	fi
     done
-    #value=$(echo $value | sed -e 's/\"/\\"/g' | sed -e 's/$/  /')
+    #value=`printf '%q\n' "$value"`
     value=" -n []"$value
 }
 
