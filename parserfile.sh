@@ -17,7 +17,7 @@ filename=stackoverflow.txt
 view_solution() {
     # answer=`jshon -e $index -e answer < $filename`
     # answer=$(echo $answer | sed 's/^.\(.*\).$/\1/')
-    # echo $answer
+    #echo $answer
     jshon -e $index -e answer < $filename | sed -e '/^\[$/d' -e  '/^\]$/d' -e 's/\,$//' -e 's/\\//g' -e 's/^ "//g' -e 's/"$//g'
     
     
@@ -26,11 +26,13 @@ view_solution() {
 
 list_questions() {
 
-    for index in $( jshon -k < $filename )
+    for index in $( jshon -k < $filename | sort -n )
     do
-	question=`jshon -e $index -e question < $filename`
-	question=$(echo $question | sed 's/^.\(.*\).$/\1/'| sed 's/^.\(.*\).$/\1/' | sed 's/^.\(.*\).$/\1/')
-	echo $index $question
+	# question=`jshon -e $index -e question < $filename`
+	# question=$(echo $question | sed 's/^.\(.*\).$/\1/'| sed 's/^.\(.*\).$/\1/' | sed 's/^.\(.*\).$/\1/')
+	# echo $index $question
+	printf $index
+	jshon -e $index -e question < $filename | sed -e '/^\[$/d' -e  '/^\]$/d' -e 's/\,$//' -e 's/\\//g' -e 's/^ "/ /g' -e 's/"$//g'
     done 
    
 }
@@ -50,7 +52,7 @@ done | sort | uniq
 
 }
 
-list_tags
+#list_tags
 list_questions
-read index
-view_solution
+# read index
+# view_solution
