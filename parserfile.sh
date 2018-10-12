@@ -15,9 +15,12 @@ filename=stackoverflow.txt
 
 
 view_solution() {
-    answer=`jshon -e $index -e answer < $filename`
-    answer=$(echo $answer | sed 's/^.\(.*\).$/\1/')
-    echo $answer
+    # answer=`jshon -e $index -e answer < $filename`
+    # answer=$(echo $answer | sed 's/^.\(.*\).$/\1/')
+    # echo $answer
+    jshon -e $index -e answer < $filename | sed -e '/^\[$/d' -e  '/^\]$/d' -e 's/\,$//' -e 's/\\//g' -e 's/^ "//g' -e 's/"$//g'
+    
+    
 }
 
 
@@ -47,7 +50,7 @@ done | sort | uniq
 
 }
 
-#list_tags
+list_tags
 list_questions
 read index
 view_solution

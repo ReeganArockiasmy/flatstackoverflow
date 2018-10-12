@@ -68,4 +68,98 @@
  ]
 }
 
+,"5":
+{
+ "id": "5",
+ "question": [
+  "Escape\\ Characters"
+ ],
+ "answer": [
+  "In\\ the\\ first\\ example\\,\\ \\*\\ is\\ expanded\\ to\\ mean\\ all\\ files\\ in\\ the\\ current\\ directory.",
+  "In\\ the\\ second\\ example\\,\\ \\*txt\\ means\\ all\\ files\\ ending\\ in\\ txt."
+ ],
+ "ref": [
+  "https:\/\/www.shellscript.sh\/escape.html"
+ ],
+ "tags": [
+  "bash"
+ ]
+}
+
+,"6":
+{
+ "id": "6",
+ "question": [
+  "ejk"
+ ],
+ "answer": [
+  "jker\\ \"",
+  "ekjr\\ \"\\ ej\\ \"\\ je"
+ ],
+ "ref": [],
+ "tags": []
+}
+
+,"7":
+{
+ "id": "7",
+ "question": [
+  "tesgin"
+ ],
+ "answer": [
+  "\"\"testing\""
+ ],
+ "ref": [],
+ "tags": []
+}
+
+,"8":
+{
+ "id": "8",
+ "question": [
+  "kjrek\\"
+ ],
+ "answer": [],
+ "ref": [],
+ "tags": []
+}
+
+,"9":
+{
+ "id": "9",
+ "question": [
+  "\\'"
+ ],
+ "answer": [],
+ "ref": [],
+ "tags": []
+}
+
+,"10":
+{
+ "id": "10",
+ "question": [
+  "kjek",
+  "kj"
+ ],
+ "answer": [
+  "ejrkj\"ejj\\"
+ ],
+ "ref": [],
+ "tags": []
+}
+
+,"11":
+{
+ "id": "11",
+ "question": [
+  "Test\\ Question"
+ ],
+ "answer": [
+  "This\\is\\ an\\ An\\\\swer"
+ ],
+ "ref": [],
+ "tags": []
+}
+
 }
