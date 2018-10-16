@@ -201,4 +201,27 @@
  ]
 }
 
+,"14":
+{
+ "id": "14",
+ "question": [
+  "how\\ to\\ compare\\ string\\ in\\ bash"
+ ],
+ "answer": [
+  "if\\ \\[\\ \"$x\"\\ =\\ \"valid\"\\ \\]\\;\\ then",
+  "echo\\ \"x\\ has\\ the\\ value\\ \\'valid\\'\"",
+  "fi"
+ ],
+ "ref": [
+  "bash",
+  "shell",
+  "https:\/\/stackoverflow.com\/questions\/2237080\/how-to-compare-strings-in-bash"
+ ],
+ "tags": [
+  "bash",
+  "shell",
+  "linux"
+ ]
+}
+
 }

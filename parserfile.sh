@@ -15,13 +15,21 @@ filename=stackoverflow.txt
 
 
 
+printf_new() {
+    str="-"
+    num=`echo $1 | wc -c`
+    v=$(printf "%-${num}s" "$str")
+    echo $i
+    echo "${v// /-}"
+}
+
+
 view_solution() {
     # answer=`jshon -e $index -e answer < $filename`
     # answer=$(echo $answer | sed 's/^.\(.*\).$/\1/')
     #echo $answer
     jshon -e $index -e answer < $filename | sed -e '/^\[$/d' -e  '/^\]$/d' -e 's/\,$//' -e 's/\\//g' -e 's/^ "//g' -e 's/"$//g'
-    
-    
+        
 }
 
 
@@ -43,6 +51,17 @@ list_questions() {
     done 
    
 }
+
+view(){
+
+    for i in `jshon -e $index -k < $filename`
+    do
+	printf_new $i
+	jshon -e $index -e $i < $filename | sed -e '/^\[$/d' -e  '/^\]$/d' -e 's/\,$//' -e 's/\\//g' -e 's/^ "/ /g' -e 's/"$//g'
+    done    
+}
+
+
 
 list_tags() {
     
@@ -68,9 +87,24 @@ done | sort | uniq
 usage(){
 
     echo " --all | -a {tags,questions}"
+    echo " --tags | -t {tags}"
+    echo "for example"
+    echo " ./parserfile.sh -t own -t bash"
+    echo "./parserfile.sh -i <num>"
 }
 
-
+all() {
+    key=$1
+    if [ $1 = "tags" ]
+    then
+	list_tags
+    elif [ $1 = "question" ]
+    then
+	tags="*"
+	# Bottom side code is running this script
+    #	list_questions
+    fi  
+}
 
 if [ $# -gt 0 ];
 then
@@ -81,9 +115,15 @@ then
                                     ;;
 	    -a | --all )
 			shift
-			key=$1
-			list_tags
+			#key=$1
+			all $1
+			#list_tags
 			;;
+	    -i | --index )
+		shift
+		index=$1
+		view
+		;;
 			
             -t | --tags )   
 			     shift
@@ -109,5 +149,5 @@ fi
 
 
 
-cat stackoverflow.txt | jshon -a tags | grep$tags
-echo "grep"$tags
+# cat stackoverflow.txt | jshon -a tags | grep$tags
+# echo "grep"$tags
